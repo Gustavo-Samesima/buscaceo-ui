@@ -1,3 +1,31 @@
-<p>
-  cnpj works!
-</p>
+<!-- cnpj.component.html -->
+<div class="cnpj-container">
+  <h1>{{ titleHome }}</h1>
+
+  <div class="input-group">
+    <input type="text" [(ngModel)]="buscacnpj" placeholder="Digite o CNPJ" />
+    <button (click)="buscarCNPJ(buscacnpj)" [disabled]="buscar">Buscar</button>
+  </div>
+
+  <div *ngIf="dadosCnpj">
+    <h2>Informações do CNPJ</h2>
+    <p><strong>Razão Social:</strong> {{ dadosCnpj.razao_social }}</p>
+    <p><strong>Nome Fantasia:</strong> {{ dadosCnpj.nome_fantasia }}</p>
+    <p><strong>CNPJ:</strong> {{ formatarCNPJ(dadosCnpj.cnpj) }}</p>
+    <p><strong>CEP:</strong> {{ formatarCEP(dadosCnpj.cep) }}</p>
+    <p><strong>Município:</strong> {{ dadosCnpj.municipio }}</p>
+    <p><strong>UF:</strong> {{ dadosCnpj.uf }}</p>
+    <p><strong>Situação Cadastral:</strong> {{ dadosCnpj.situacao_cadastral }}</p>
+    <p><strong>Logradouro:</strong> {{ dadosCnpj.logradouro }}</p>
+    <p><strong>Número:</strong> {{ dadosCnpj.numero }}</p>
+    <p><strong>Complemento:</strong> {{ dadosCnpj.complemento }}</p>
+    <p><strong>Bairro:</strong> {{ dadosCnpj.bairro }}</p>
+    <p><strong>Email:</strong> {{ dadosCnpj.email }}</p>
+    <p><strong>Telefone:</strong> {{ dadosCnpj.telefone }}</p>
+    <p><strong>Data de Início de Atividade:</strong> {{ formatarData(dadosCnpj.data_inicio_atividade) }}</p>
+  </div>
+
+  <div *ngIf="buscar">
+    <p>Buscando CNPJ...</p>
+  </div>
+</div>

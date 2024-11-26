@@ -1,22 +1,17 @@
-import { NgModule } from "@angular/core";
-import { ButtonModule } from 'primeng/button';
-import { InputMaskModule } from 'primeng/inputmask';
+import { NgModule } from '@angular/core';
 import { InputTextModule } from 'primeng/inputtext';
-import { KeyFilterModule } from 'primeng/keyfilter';
+import { ButtonModule } from 'primeng/button';
 import { MessagesModule } from 'primeng/messages';
-import { ToastModule } from 'primeng/toast';
+import { MessageModule } from 'primeng/message';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+
 @NgModule({
-
-
-    exports:[
-        ButtonModule,
-        InputTextModule,
-        KeyFilterModule,
-        InputMaskModule,
-        MessagesModule,
-        ToastModule
-    ]
+  exports: [
+    InputTextModule,
+    ButtonModule,
+    MessagesModule,
+    MessageModule,
+    ProgressSpinnerModule
+  ]
 })
-
-
 export class PrimeNGModule { }

@@ -1,0 +1,14 @@
+<div class="cnpj-search">
+  <input type="text" [(ngModel)]="cnpj" placeholder="Digite o CNPJ" />
+  <button (click)="searchCnpj()">Buscar</button>
+
+  <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+  <div *ngIf="cnpjDetails">
+    <h3>Detalhes do CNPJ:</h3>
+    <p><strong>Nome:</strong> {{ cnpjDetails.nome }}</p>
+    <p><strong>CNPJ:</strong> {{ cnpjDetails.cnpj }}</p>
+    <p><strong>Atividade:</strong> {{ cnpjDetails.atividade_principal[0].text }}</p>
+    <p><strong>Endereço:</strong> {{ cnpjDetails.logradouro }}, {{ cnpjDetails.numero }} - {{ cnpjDetails.bairro }}</p>
+  </div>
+</div>
